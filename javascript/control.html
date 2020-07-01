@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/control.html</title>
+</head>
+<body>
+    <input type="text" id="score" value="80" placeholder="숫자입력">
+    <br>
+    <button onclick="checkScore()">Click</button>
+    <p id="show"></p>
+    <script>
+        function checkScore() {
+            var score = document.getElementById('score').value;
+            console.log(typeof score);
+            score = parseInt(score);
+            var element1 = document.getElementById('show');
+            console.log(element1);
+
+            if(score>=90) {
+                element1.innerHTML = 'gooooooooooooood';
+                element1.setAttribute('style', 'background-color: aqua');
+                // document.getElementById('show').innerHTML = 'gooooooooooooood';
+                // window.alert('gooooooooooooood');
+            }else if (score>=80){
+                element1.innerHTML = 'ummmmmmmmmmmmmmm';
+                element1.setAttribute('style', 'background-color: pink');
+                // document.getElementById('show').innerHTML = 'ummmmmmmmmmmmmmm';
+                // window.alert('ummmmmmmmmmmmmmm')
+            }else if (score>=70){
+                element1.innerHTML = 'sooooooooooooooo';
+                element1.setAttribute('style', 'background-color: red');
+                // document.getElementById('show').innerHTML = 'sooooooooooooooo';
+                // window.alert('sooooooooooooooo')
+            } else {   
+                element1.innerHTML = 'badddddddddddddd';
+                element1.setAttribute('style', 'background-color: yellow');
+                // document.getElementById('show').innerHTML = 'badddddddddddddd';
+                // window.alert('badddddddddddddd')
+            }
+        }
+    </script>
+</body>
+</html>

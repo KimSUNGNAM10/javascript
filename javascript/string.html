@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/string.html</title>
+</head>
+<body>
+    <script>
+        var str = "hee";
+        var str2 = new String("hee");
+        console.log(str == str2);
+        console.log(str === str2); // === 데이터, 데이터타입까지 비교
+
+        str = 'please locate where "locate" occurs!';
+        // console.log(str.indexOf('locates')); //단어를 찾을때
+        // console.log(str.lastIndexOf('locate')); //뒤에서부터 찾음
+        console.log(str.lastIndexOf('locate', 10)); //위치도 지정가능
+        console.log(str.search('locate')); //매개값이 하나만 
+
+        var result = str.slice(7, 13); //7에서 13까지
+        document.write('<b>' + result + '</b><br>');
+
+        result = str.substr(7, 13); //7에서 13만큼 가져옴
+        document.write('<h1>' + result + '</h1>');
+
+        result = str.replace(/locate/g, 'rocate'); //locate를 rocate로 바꿈
+        console.log(result);
+
+        str = 'Please Locate where "LOCATE" occurs!';
+        result = str.toLowerCase();
+        result = str.toUpperCase();
+
+        result = "o".concat(" a!", "ll"); //붙여줌
+        console.log(result);
+
+        var sp = "banana, orange, apple".split(","); //, 기준으로 배열을 만들어줌
+        for (var i = 0; i<sp.length; i++) {
+            document.write(sp[i]);
+        }
+        for (i of sp) { //sp에서 값을 가져옴
+            console.log(i);
+        }
+
+    </script>
+</body>
+</html>

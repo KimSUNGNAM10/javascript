@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/function.html</title>
+</head>
+<body>
+    <script>
+        function sum(a, b) {
+            return a + b;
+        }
+
+        var result = sum(10, 20);
+        console.log("result : " + result);
+
+        result = sum("10", " world");
+        console.log("result : " + result);
+
+        var fnc = function(a, b) {
+            return a * b;
+        }
+        console.log(fnc(2,3,6)); //3번째값부터는 무시 에러는 x
+        
+        result = fnc(3, 6);
+        console.log("result : " + fnc(2,3));
+        // console.log("result : " + fnc); function 실행문 보여줌
+
+        var fnc2 = function() {
+            document.write("hellooooooooooo" + "<br>");
+        }
+        fnc2();     //실행
+        
+        (function() {
+            document.write("hello", " world");
+        })(); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div { border: 3px solid #73AD21;}
+        .img1 {float: right;}
+        .fix { overflow: auto;}
+        .img2 { float: right;}
+    </style>
+</head>
+<body>
+    <p>이미지가 박스 영역을 벗어남</p>
+    <div><img class="img1" src="보라보라섬.jpg" alt="image" width="140" height="140">
+    이미지가 오른쪽 정렬로 되어 있는데 박스 영역을 벗어남</div>
+    <p style="clear: right;">overflow: auto; 속성을 사용하여 해결</p>
+    <div class="fix"><img class="img2" src="서울.jpg" alt="img" width="140" height="140">
+    이미지가 ㅇ눞ㄴ웊ㄴ우푼이ㅑㅓ린ㅇ링ㄴ리</div>
+</body>
+</html>
