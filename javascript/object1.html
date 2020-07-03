@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/object1.html</title>
+</head>
+<body>
+    <script>
+        
+        var person = {
+            name: "H",
+            age: 20,
+            height: 170,
+            eat: function() {
+                console.log("eat");
+            }
+        };
+        var person1 = {
+            name: "p",
+            age: 20,
+            height: 170,
+            eat: function() {
+                console.log("eat");
+            }
+        };
+        var persons = [person, person1];
+
+        var nm = "name";
+        person.name = "k";
+        // console.log(person["name"]); //[]배열 아님 person 안에 name 속성을 가져옴
+        // console.log(person["nm"]); // 안됨
+        // console.log(person[nm]);
+        console.log(persons);
+        document.write("<p>" + persons[0].name + "</p>");
+        document.write("<p>" + persons[0].age + "</p>");
+        document.write("<p>" + persons[0]["height"] + "</p>");
+
+        var strAry = [];
+        strAry.push("p");
+        strAry.push("r");
+        strAry[strAry.length] = "p";
+        for (var i=0; i<strAry.length; i++) {
+            document.write("<p>" + strAry[i] + "</p>");
+        }
+        strAry.pop();
+        delete strAry[1];
+        for(var i=0; i<strAry.length; i++) {
+            console.log(strAry[i]);
+        }
+        strAry.unshift("w");
+        strAry.unshift("m");
+        console.log("============")
+        for(var i=0; i<strAry.length; i++) {
+            console.log(strAry[i]);
+        }
+        strAry.shift();
+        console.log("============")
+        for(var i=0; i<strAry.length; i++) {
+            console.log(strAry[i]);
+        }
+    </script>
+</body>
+
+</html>

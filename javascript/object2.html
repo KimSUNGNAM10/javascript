@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        for (var i = 0; i < 10; i++) {
+            document.write("<p class='col'>" + i + "</p>");
+        }
+
+        var elmtAry = document.getElementsByClassName("col");
+        // console.log(elmtAry);
+        var newAry = [];
+        for (var i = 0; i < elmtAry.length; i++) {
+            newAry.push(elmtAry[i].innerHTML);
+        }
+
+        var sliceAry = newAry.splice(5, 2); //5번째 배열에서 두개를 sliceAry에 넣음, (5)면 5번쨰부터 다보여줌 
+        // console.log(sliceAry); // 결과 5,6
+
+        var sliceAry1 = newAry.splice(0, 3);
+        // console.log(sliceAry1); // 결과 0, 1, 2
+
+        var totalSlice = sliceAry.concat(sliceAry1);
+        // console.log(totalSlice); //결과 5, 6, 0, 1, 2
+
+        var sum = 0;
+        document.write("<ul>");
+        totalSlice.forEach(callbackFunc);
+        document.write("</ul>");
+
+        // document.write(sum);
+
+        function callbackFunc(a, b, c) {
+            console.log(a, b);
+            // sum += parseInt(a);
+            document.write("<li> index : " + b + ", value : " + a + "</li>");
+        }
+
+        var callbackFunc = function (a, b, c) {
+            console.log(a, b);
+            sum += parseInt(a);
+        };
+
+    </script>
+</body>
+
+</html>
