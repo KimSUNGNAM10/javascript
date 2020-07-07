@@ -9,13 +9,104 @@
         function showCurrentTime() {
             document.getElementById("show").innerHTML = Date();
         }
+        function btnClassFunc() {
+            var btns = document.getElementsByClassName('btnClass');
+            for (var i=0; i<btns.length; i++) {
+                this.parentNode.parentNode.remove();
+                    
+                }
+                btns[i].onmouseover = function() {
+                    this.parentNode.parentNode.style.background = "yellow";
+                    
+                }
+                btns[i].onmouseout = function() {
+                    this.parentNode.parentNode.style.background = "";
+                }
+            }
+        
     </script>
 </head>
 
 <body>
+    id : <input type="text" id="id" value="15">
+    FName : <input type="text" id="FName">
+    LName : <input type="text" id="LName">
+    <button id="btn">Click</button>
     <p id="show"></p>
-    <button onclick="showCurrentTime()" id="btn">Click</button>
+
     <script>
+        var btn = document.getElementById('btn');
+        console.log(btn);
+        btn.onclick = function () {
+            var inputs = document.getElementsByTagName('input');
+            var $tr = document.createElement('tr');
+            for (var i = 0; i < inputs.length; i++) {
+                var $td = document.createElement('td');
+                var $text = document.createTextNode(inputs[i].value);
+                $td.appendChild($text);
+                $tr.appendChild($td);
+            }
+            $td = document.createElement("td");
+            var $button = document.createElement("button");
+            $button.innerHTML = "click";
+
+            $button.onmouseover = function () {
+                this.parentNode.parentNode.style.background = "yellow";
+            }
+            $button.onmouseout = function () {
+                this.parentNode.parentNode.style.background = "";
+            }
+            $button.onclick = function () {
+                this.parentNode.parentNode.remove();
+            }
+            $td.appendChild($button);
+            $tr.appendChild($td);
+            $table.appendChild($tr);
+ 
+            // \===========================================================================
+            // var eid = document.getElementById('eid').value;
+            // var FName = document.getElementById('FName').value;
+            // var LName = document.getElementById('LName').value;
+
+            // var $tr = document.createElement("tr");
+            // var $td = document.createElement("td");
+            // var $text = document.createTextNode(eid);
+            // $td.appendChild($text);
+            // $tr.appendChild($td);
+
+            // var $td = document.createElement("td");
+            // var $text = document.createTextNode(FName);
+            // $td.appendChild($text);
+            // $tr.appendChild($td);
+
+            // var $td = document.createElement("td");
+            // var $text = document.createTextNode(LName);
+            // $td.appendChild($text);
+            // $tr.appendChild($td);
+            // $table.appendChild($table); 
+        }
+
+        // ==========================================================================================
+        //    var btn = document.getElementById("btn");
+        //    btn.onclick = showCurrentTime;
+        //    btn.onclick = function(){
+        //    var idValue = document.getElementById('id').value;
+        //    var FNameValue = document.getElementById('FName').value
+        //    var LNameValue = document.getElementById('LName').value
+        //     var allinfo[id,FName,LName];
+
+        //     tr = document.createElement("tr");
+        //     for (var i=o; i<allinfo.length; i++) {
+        //     $td = document.createElement("td");
+        //     $td.appendChild(document.createTextNode(idValue));
+        //     $tr.appendChild(td);
+        //     }
+        //     $button = document.createElement("button");
+        //     $button.innerHTML = "click";
+        //     $td.appendChild($button);
+        //     $tr.appendChild($td);
+        //     $table.appendChild(tr);
+        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
         // console.log(this);
         // var btn = document.getElementById("btn");
         // btn.onclick = showCurrentTime;
@@ -25,6 +116,8 @@
         // btn.onmouseout = function() {
         //     btn.setAttribute("style", "background-color: null");
         // }
+
+
 
         var jsonData = [{ "id": 1, "first_name": "Jennee", "last_name": "O' Kelleher", "email": "jokelleher0@va.gov", "gender": "Female" },
         { "id": 2, "first_name": "Boonie", "last_name": "Bayliss", "email": "bbayliss1@usda.gov", "gender": "Male" },
@@ -55,10 +148,12 @@
             $tr.appendChild($th);
         }
         $table.appendChild($tr);
+
+
         jsonData.forEach(function (o, i, a) {
             var $tr = document.createElement("tr");
             for (field of titles) {
-                var $td = document.createElement("td");
+                var $td = document.createElement("td");  //4줄 데이터 뿌려주는곳
                 var $text = document.createTextNode(o[field]);
                 $td.appendChild($text);
                 $tr.appendChild($td);
@@ -66,28 +161,26 @@
             $td = document.createElement("td");
             var $button = document.createElement("button");
             $button.innerHTML = "click";
+            $button.setAttribute('class', 'btnClass');
             // $button.onclick = function() {
             //     this.parentNode.parentNode.style.background = "yellow"; //this =->button, button부모의 부모 tr에 style줌
             // }
-            $button.onmouseover = function() {
+            $button.onmouseover = function () {
                 this.parentNode.parentNode.style.background = "yellow";
             }
-            $button.onmouseout = function() {
-            this.parentNode.parentNode.style.background = "";
+            $button.onmouseout = function () {
+                this.parentNode.parentNode.style.background = "";
             }
-            $button.onclick = function() {
+            $button.onclick = function () {
                 this.parentNode.parentNode.remove();
             }
-
             $td.appendChild($button);
             $tr.appendChild($td);
-
             $table.appendChild($tr);
         });
         var show = document.getElementById("show");
 
         show.appendChild($table);
-
 
     </script>
 

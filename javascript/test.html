@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인순위</title>
+
+</head>
+
+<body>
+    <script>
+
+        var person1 = { Ranking: 1, Team: "바르셀로나", Name: "리오넬 메시", Score: 22, GameNumber: 29 }
+        var person2 = { Ranking: 2, Team: "레알마드리드", Name: "카림 벤제마", Score: 17, GameNumber: 33 }
+        var person3 = { Ranking: 3, Team: "비야레알", Name: "헤라르드 모레노", Score: 16, GameNumber: 32 }
+        var person4 = { Ranking: 4, Team: "바르셀로나", Name: "루이스 수아레스", Score: 14, GameNumber: 24 }
+        var person5 = { Ranking: 5, Team: "빌바오", Name: "라울 가르시아", Score: 13, GameNumber: 32 }
+        liliga.push(person1);
+        liliga.push(person2);
+        liliga.push(person3);
+        liliga.push(person4);
+        liliga.push(person5);
+
+        var titleAry = ['순위', '팀', '선수', '득점', '경기수'];
+
+        document.write('<table border="1">');
+        document.write('<te>');
+        for (var i = 0; i < titleAry.length; i++) {
+            document.write('<th>' + titleAry[i] + '</th>');
+        }
+        document.write('</tr>');
+
+        document.write("<table border='1'>");
+        document.write("<tr>");
+        for (f in liliga) {
+            document.write("<th>" + f + "</th>");
+        }
+        document.write("</tr>");
+        persons.forEach(showTable);
+        document.write("</table>");
+
+        function showTable(elm) {
+            document.write("<tr>");
+            document.write("<td>"
+                + elm.Ranking + "</td><td>"
+                + elm.Team + "</td><td>"
+                + elm.Name + "</td><td>"
+                + elm.Score + "</td><td>"
+                + elm.GameNumber + "</td>");
+            document.write("</tr>")
+        }
+    </script>
+</body>
+
+</html>
