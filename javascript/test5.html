@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="table.css">
+
+</head>
+<body>
+    <table id='tbl' border='1'>
+        
+    </table>
+    
+    <script>
+        var jsonData = [{"id":1,"first_name":"Paxton","last_name":"Tregoning","email":"ptregoning0@nih.gov","gender":"Male"},
+                        {"id":2,"first_name":"Shaine","last_name":"Mollin","email":"smollin1@free.fr","gender":"Female"},
+                        {"id":3,"first_name":"Port","last_name":"Spreull","email":"pspreull2@yandex.ru","gender":"Male"},
+                        {"id":4,"first_name":"Eirena","last_name":"Beards","email":"ebeards3@vkontakte.ru","gender":"Female"},
+                        {"id":5,"first_name":"Andee","last_name":"Biasio","email":"abiasio4@hugedomains.com","gender":"Female"},
+                        {"id":6,"first_name":"Harv","last_name":"Ditt","email":"hditt5@ucoz.ru","gender":"Male"}];
+        
+        $tbl = document.getElementById('tbl');
+        var titles = ["id", "first_name", "last_name", "email", "gender"];
+        
+        $tbl.setAttribute("border", 1);
+        var $tr = document.createElement("tr");
+        $tr.className = 'title';
+        for(field of titles){
+            var $th = document.createElement("th")
+            var $text = document.createTextNode(field.replace('_', '').toUpperCase());
+            $th.appendChild($text);
+            $tr.appendChild($th);
+        }
+        $tbl.appendChild($tr);
+
+        for(index in jsonData){
+            
+            $tr = document.createElement('tr');
+            $tr.setAttribute('id', jsonData[index]['id']);
+            for(key in jsonData[index]){
+                console.log(key);
+                $td = document.createElement('td');
+                $text = document.createTextNode(jsonData[index][key]);
+                $td.appendChild($text);
+                $tr.appendChild($td);
+            }
+
+            var $td = document.createElement('td');
+            var $btn = document.createElement('Button');
+            $btn.textContent = "button";
+            $btn.onclick = function(){
+                this.parentNode.parentNode.remove();
+            }
+            $td.appendChild($btn);
+            $tr.appendChild($td);
+
+            $tbl.appendChild($tr);
+        }
+        
+        
+    </script> 
+</body>
+</html>

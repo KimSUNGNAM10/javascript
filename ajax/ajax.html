@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ajax 요청 페이지</h1>
+    <button id="btn">Click</button>
+    <script>
+        var btn = document.getElementById('btn');
+        btn.onclick = ajaxFunc;
+
+        function ajaxFunc() {
+            var xhtp = new XMLHttpRequest();
+            xhtp.onreadystatechange = function() {
+            //     console.log('readyState =>' + xhtp.readyState);
+            //     console.log('status =>' + xhtp.status);
+                if(xhtp.readyState ==4 && xhtp.status == '200') {
+                    var data = JSON.parse(xhtp.responseText); //문자열을 javascript에 object타입으로 변환
+                    console.log(data);
+                // for( var i = 0; i<data.length; i++) {
+                //     document.write(data[i].id + "<br>");
+                // }   결과 같음
+                    data.forEach(function(a, b, c) {
+                        document.write(a.id + "<br>");
+
+                    });
+                }
+            }
+            xhtp.open('get', 'MOCK_DATA.json'); //동기방식 true적으면됨  
+            xhtp.send();
+        }
+    </script>
+</body>
+</html>

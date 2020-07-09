@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showCurrentTime() {
+            document.getElementById("show").innerHTML = Date();
+        }
+        function btnClassFunc() {
+            var btns = document.getElementsByClassName('btnClass');
+            for (var i = 0; i < btns.length; i++) {
+                this.parentNode.parentNode.remove();
+
+            }
+            btns[i].onmouseover = function () {
+                this.parentNode.parentNode.style.background = "yellow";
+
+            }
+            btns[i].onmouseout = function () {
+                this.parentNode.parentNode.style.background = "";
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>TITLE</h1>
+
+    studentNo : <input type="text" id="studentNo">
+    name : <input type="text" id="name">
+    grade : <input type="text" id="grade">
+    major : <input type="text" id="major">
+
+    <button id="btn">Click</button>
+    <p id="show"></p>
+    
+    <select id="select1" onchange="alert_select_value(this);">
+        <option value="studentNo">1</option>
+        <option value="name">2</option>
+        <option value="grade">3</option>
+        <option value="major">4</option>
+    </select>
+
+    <script>
+      var alert_select_value = function (select_obj){
+            
+            var selected_index = select_obj.selectedIndex;
+            var selected_value = select_obj.options[selected_index].value;
+            alert(selected_value);
+        };
+
+        var btn = document.getElementById('btn');
+        console.log(btn);
+        btn.onclick = function () {
+            var inputs = document.getElementsByTagName('input');
+            var $tr = document.createElement('tr');
+            for (var i = 0; i < inputs.length; i++) {
+                var $td = document.createElement('td');
+                var $text = document.createTextNode(inputs[i].value);
+                $td.appendChild($text);
+                $tr.appendChild($td);
+            }
+            $td = document.createElement("td");
+            var $button = document.createElement("button");
+            $button.innerHTML = "click";
+
+            $button.onmouseover = function () {
+                this.parentNode.parentNode.style.background = "yellow";
+            }
+            $button.onmouseout = function () {
+                this.parentNode.parentNode.style.background = "";
+            }
+            $button.onclick = function () {
+                this.parentNode.parentNode.remove();
+            }
+            $td.appendChild($button);
+            $tr.appendChild($td);
+            $table.appendChild($tr);
+        }
+        var jsonData = [{ "studentNo": 1, "name": "박", "grade": 1, "major": "영문과" },
+                        { "studentNo": 2, "name": "김", "grade": 2, "major": "영문과" },
+                        { "studentNo": 3, "name": "이", "grade": 3, "major": "영문과" },
+                        { "studentNo": 4, "name": "최", "grade": 4, "major": "영문과" }];
+        console.log(jsonData);
+
+        var titles = ["studentNo", "name", "grade", "major"];
+
+        var $table = document.createElement("table");
+        $table.setAttribute("border", "1");
+        var $tr = document.createElement("tr");
+        for (field of titles) {
+            var $th = document.createElement("th");
+            var $text = document.createTextNode(field.replace("_", "").toUpperCase());
+            $th.appendChild($text);
+            $tr.appendChild($th);
+        }
+        $table.appendChild($tr);
+
+        jsonData.forEach(function (o, i, a) {
+            var $tr = document.createElement("tr");
+            for (field of titles) {
+                var $td = document.createElement("td");
+                var $text = document.createTextNode(o[field]);
+                $td.appendChild($text);
+                $tr.appendChild($td);
+            }
+            $td = document.createElement("td");
+            var $button = document.createElement("button");
+            $button.innerHTML = "click";
+            $button.setAttribute('class', 'btnClass');
+
+            $button.onmouseover = function () {
+                this.parentNode.parentNode.style.background = "yellow";
+            }
+            $button.onmouseout = function () {
+                this.parentNode.parentNode.style.background = "";
+            }
+            $button.onclick = function () {
+                this.parentNode.parentNode.remove();
+            }
+            $td.appendChild($button);
+            $tr.appendChild($td);
+            $table.appendChild($tr);
+        });
+        var show = document.getElementById("show");
+
+        show.appendChild($table);
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+
+<body>
+    수1 : <input type="text" id="su1"><br>
+    수2 : <input type="text" id="su2"><br>
+    <button onclick="sol()">계산</button>
+    <script>
+        function sol(a, b) {
+            var answer = 0;
+            var small, big;
+            if (a > b) {
+                big = a;
+                small = b;
+            } else if (b > a) {
+                big = b;
+                small = a;
+            } else {
+                answer = a;
+            }
+            for (var i = small; i <= big; i++) {
+                answer += i;
+            }
+            return answer;
+        }
+    </script>
+</body>
+
+</html>
