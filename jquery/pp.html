@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("ul li:first").hide(); //선택된값이 안보여지게
+                // var lis = document.querySelectorAll('ul li:first'); , 두개리스트에서 첫번쨰값이 다사라짐('ul li:first-child');
+                // var lis = document.querySelector("ul").querySelectorAll('li:first-child'); 첫번째만 사라지게 하는식
+                // document.querySelectorAll('ul li:first')[0].style.display="none";
+                // for (var i = 0; i< lis.length; i++) {
+                //     lis.style.display = "none";
+                // }
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <p>List 1:</p>
+    <ul>
+        <li>Coffee</li>
+        <li>Milk</li>
+        <li>Tea</li>
+    </ul>
+
+    <p>List 2:</p>
+    <ul>
+        <li>Coffee</li>
+        <li>Milk</li>
+        <li>Tea</li>
+    </ul>
+
+    <button>Click me</button>
+
+</body>
+
+</html>

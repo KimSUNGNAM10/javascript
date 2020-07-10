@@ -12,12 +12,11 @@
         <p class="name">홍길동2</p>
     </div>
     <p class="name">홍길동3</p>
-
     <script>
-        all = document.querySelectorAll('div>.name')
-        all.forEach(function(o){
+        var ps = document.querySelectorAll('div > .name');
+        ps.forEach(function(o, i, a) {
             console.log(o);
-        })
+        });
     </script>
 </body>
 </html>

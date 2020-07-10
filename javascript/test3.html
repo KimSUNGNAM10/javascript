@@ -1,17 +1,23 @@
-<!doctype html>
-<html lang="ko">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>JavaScript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-
 <body>
-    <p><a id="abc" href="https://www.naver.com">홍길동</a></p>
+    <div>
+        <p>홍길동</p>
+        <p class="name">홍길동1</p>
+        <p class="name">홍길동2</p>
+    </div>
+    <p class="name">홍길동3</p>
+
     <script>
-        var jbHref = document.getElementById('abc').getAttribute('href');
-        console.log(jbHref);
+        all = document.querySelectorAll('div>.name')
+        all.forEach(function(o){
+            console.log(o);
+        })
     </script>
 </body>
-
 </html>
