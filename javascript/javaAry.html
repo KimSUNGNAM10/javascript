@@ -8,30 +8,8 @@
 </head>
 
 <body>
-    
-    id : <input type="text" id="id">
-    first_name : <input type="text" id="fname">
-    last_name : <input type="text" id="lname">
-    email : <input type="text" id="email">
-    gender : <input type="text" id="gender">
-    <button onclick="add_row()"> 추가 </button>
-    
     <p id="show"></p>
     <script>
-        function add_row () {
-            var $table = document.createElement("table");
-            var tr = document.createElement("tr");
-
-            var td1 = document.createElement("td");
-            td1.innerText = document.all.txtHome.value();
-            var td2 = document.createElement("td");
-            td2.innerText = document.all.txtAway.value();
-
-            tr.appendChild(td1);
-            tr.appendChild(td2);
-            table.firstChild.appendChild(tr);
-        }
-
         var jsonData = [{ "id": 1, "first_name": "Jennee", "last_name": "O' Kelleher", "email": "jokelleher0@va.gov", "gender": "Female" },
         { "id": 2, "first_name": "Boonie", "last_name": "Bayliss", "email": "bbayliss1@usda.gov", "gender": "Male" },
         { "id": 3, "first_name": "Sarena", "last_name": "Portress", "email": "sportress2@gov.uk", "gender": "Female" },
@@ -73,7 +51,7 @@
         //\\\\\\\\\\\\\\=============================================================================
         console.log(jsonData);
         // document.write("<h2>목록</h2>")
-        var titles = ['id', 'first_name', 'last_name', 'email', 'gender'];
+        var titles = ['id', 'firstname', 'lastname', 'email', 'gender'];
 
         var $table = document.createElement("table");
         $table.setAttribute("border", "1");
