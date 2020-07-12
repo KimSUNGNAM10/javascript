@@ -30,6 +30,7 @@ $(document).ready(function () {
         titles.forEach(function(f) {
             $tr.append($('<td />').text(o[f]));
         })
+        
         $table.append($tr);
     });
 
