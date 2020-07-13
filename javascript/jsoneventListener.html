@@ -29,7 +29,7 @@
 
         var titles = ["id", "first_name", "last_name", "email", "gender"];
 
-        document.getElementById(id).remove();
+        document.getElementById(id);      //.remove();
         var $tr = document.createElement('tr');
         $tr.setAttribute('id', jsonData.id);
         $button = document.createElement('button');

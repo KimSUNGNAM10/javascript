@@ -6,50 +6,171 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>개인순위</title>
 
+    <h2>%리그별 개인순위%</h2>
 </head>
 
 <body>
+    <button id="Btn" onmouseover="liliga()">라리가</button>
+    <button id="Btn1" onmouseover="pl()">프리미어리그</button>
+    <button id="Btn2" onmouseover="Bundesliga()">분데스리가</button>
+    <button id="Btn3" onmouseover="Serie()">세리에</button>
+    <p id="cal"></p>
+    <p id="cal1"></p>
+    <p id="cal2"></p>
+    <p id="cal3"></p>
     <script>
 
-        var person1 = { Ranking: 1, Team: "바르셀로나", Name: "리오넬 메시", Score: 22, GameNumber: 29 }
-        var person2 = { Ranking: 2, Team: "레알마드리드", Name: "카림 벤제마", Score: 17, GameNumber: 33 }
-        var person3 = { Ranking: 3, Team: "비야레알", Name: "헤라르드 모레노", Score: 16, GameNumber: 32 }
-        var person4 = { Ranking: 4, Team: "바르셀로나", Name: "루이스 수아레스", Score: 14, GameNumber: 24 }
-        var person5 = { Ranking: 5, Team: "빌바오", Name: "라울 가르시아", Score: 13, GameNumber: 32 }
-        liliga.push(person1);
-        liliga.push(person2);
-        liliga.push(person3);
-        liliga.push(person4);
-        liliga.push(person5);
+        function liliga() {
 
-        var titleAry = ['순위', '팀', '선수', '득점', '경기수'];
+            var person1 = { Ranking: 1, Team: "바르셀로나", Name: "리오넬 메시", Score: 22, GameNumber: 31 }
+            var person2 = { Ranking: 2, Team: "레알마드리드", Name: "카림 벤제마", Score: 18, GameNumber: 34 }
+            var person3 = { Ranking: 3, Team: "비야레알", Name: "헤라르드 모레노", Score: 16, GameNumber: 33 }
+            var person4 = { Ranking: 4, Team: "바르셀로나", Name: "루이스 수아레스", Score: 15, GameNumber: 26 }
+            var person5 = { Ranking: 5, Team: "세비야", Name: "루카스 오캄포스", Score: 13, GameNumber: 30 }
+            liliga = [];
+            liliga.push(person1);
+            liliga.push(person2);
+            liliga.push(person3);
+            liliga.push(person4);
+            liliga.push(person5);
 
-        document.write('<table border="1">');
-        document.write('<te>');
-        for (var i = 0; i < titleAry.length; i++) {
-            document.write('<th>' + titleAry[i] + '</th>');
-        }
-        document.write('</tr>');
-
-        document.write("<table border='1'>");
-        document.write("<tr>");
-        for (f in liliga) {
-            document.write("<th>" + f + "</th>");
-        }
-        document.write("</tr>");
-        persons.forEach(showTable);
-        document.write("</table>");
-
-        function showTable(elm) {
+            var titleAry = ['순위', '팀', '선수', '득점', '경기수'];
+            
+            document.write("<table border='1'>");
             document.write("<tr>");
-            document.write("<td>"
-                + elm.Ranking + "</td><td>"
-                + elm.Team + "</td><td>"
-                + elm.Name + "</td><td>"
-                + elm.Score + "</td><td>"
-                + elm.GameNumber + "</td>");
-            document.write("</tr>")
+            for (f in person1) {
+                document.write("<th>" + f + "</th>");
+            }
+            document.write("</tr>");
+            liliga.forEach(showTable);
+            document.write("</table>");
+
+            function showTable(elm) {
+                document.write("<tr>");
+                document.write("<td>"
+                    + elm.Ranking + "</td><td>"
+                    + elm.Team + "</td><td>"
+                    + elm.Name + "</td><td>"
+                    + elm.Score + "</td><td>"
+                    + elm.GameNumber + "</td>");
+                document.write("</tr>")
+            }
+            $table.appendChild($tr);
+            document.getElementById("cal").appendChild($table);
         }
+
+        function pl() {
+            var person1 = { Ranking: 1, Team: "레스터", Name: "제이미 바디", Score: 22, GameNumber: 31 }
+            var person2 = { Ranking: 2, Team: "아스날", Name: "피에르 에머릭 오바메양", Score: 20, GameNumber: 32 }
+            var person3 = { Ranking: 3, Team: "리버풀", Name: "모하메드 살라", Score: 19, GameNumber: 31 }
+            var person4 = { Ranking: 4, Team: "사우샘프턴", Name: "대니 잉스", Score: 19, GameNumber: 34 }
+            var person5 = { Ranking: 5, Team: "맨시티", Name: "라힘 스털링", Score: 17, GameNumber: 30 }
+            pl = [];
+            pl.push(person1);
+            pl.push(person2);
+            pl.push(person3);
+            pl.push(person4);
+            pl.push(person5);
+
+            var titleAry = ['순위', '팀', '선수', '득점', '경기수'];
+            document.write("<table border='1'>");
+            document.write("<tr>");
+            for (f in person1) {
+                document.write("<th>" + f + "</th>");
+            }
+            document.write("</tr>");
+            pl.forEach(showTable);
+            document.write("</table>");
+
+            function showTable(elm) {
+                document.write("<tr>");
+                document.write("<td>"
+                    + elm.Ranking + "</td><td>"
+                    + elm.Team + "</td><td>"
+                    + elm.Name + "</td><td>"
+                    + elm.Score + "</td><td>"
+                    + elm.GameNumber + "</td>");
+                document.write("</tr>")
+            }
+            $table.appendChild($tr);
+            document.getElementById("cal1").appendChild($table);
+        }
+
+        function Bundesliga() {
+            var person1 = { Ranking: 1, Team: "바이에른 뮌헨", Name: "로베르트 레반도프스키", Score: 34, GameNumber: 31 }
+            var person2 = { Ranking: 2, Team: "RB 라이프치히", Name: "티모 베르너", Score: 28, GameNumber: 34 }
+            var person3 = { Ranking: 3, Team: "도르트문트", Name: "제이든 산초", Score: 17, GameNumber: 32 }
+            var person4 = { Ranking: 4, Team: "볼프스부르크", Name: "보우트 베흐호스트", Score: 16, GameNumber: 32 }
+            var person5 = { Ranking: 5, Team: "뒤셀도르프", Name: "루벤 헤닝스", Score: 15, GameNumber: 32 }
+            Bundesliga = [];
+            Bundesliga.push(person1);
+            Bundesliga.push(person2);
+            Bundesliga.push(person3);
+            Bundesliga.push(person4);
+            Bundesliga.push(person5);
+
+            var titleAry = ['순위', '팀', '선수', '득점', '경기수'];
+            document.write("<table border='1'>");
+            document.write("<tr>");
+            for (f in person1) {
+                document.write("<th>" + f + "</th>");
+            }
+            document.write("</tr>");
+            Bundesliga.forEach(showTable);
+            document.write("</table>");
+
+            function showTable(elm) {
+                document.write("<tr>");
+                document.write("<td>"
+                    + elm.Ranking + "</td><td>"
+                    + elm.Team + "</td><td>"
+                    + elm.Name + "</td><td>"
+                    + elm.Score + "</td><td>"
+                    + elm.GameNumber + "</td>");
+                document.write("</tr>")
+            }
+            $table.appendChild($tr);
+            document.getElementById("cal2").appendChild($table);
+        }
+        
+
+        function Serie() {
+            var person1 = { Ranking: 1, Team: "라치오", Name: "치로 임모빌레", Score: 29, GameNumber: 31 }
+            var person2 = { Ranking: 2, Team: "유벤투스", Name: "크리스티아누 호날두", Score: 28, GameNumber: 28 }
+            var person3 = { Ranking: 3, Team: "인터 밀란", Name: "로멜루 루카쿠", Score: 20, GameNumber: 31 }
+            var person4 = { Ranking: 4, Team: "아탈란타", Name: "루이스 무리엘", Score: 17, GameNumber: 29 }
+            var person5 = { Ranking: 5, Team: "칼리아리", Name: "갈바오 조안 페드로", Score: 17, GameNumber: 30 }
+            Serie = [];
+            Serie.push(person1);
+            Serie.push(person2);
+            Serie.push(person3);
+            Serie.push(person4);
+            Serie.push(person5);
+
+            var titleAry = ['순위', '팀', '선수', '득점', '경기수'];
+            document.write("<table border='1'>");
+            document.write("<tr>");
+            for (f in person1) {
+                document.write("<th>" + f + "</th>");
+            }
+            document.write("</tr>");
+            Serie.forEach(showTable);
+            document.write("</table>");
+
+            function showTable(elm) {
+                document.write("<tr>");
+                document.write("<td>"
+                    + elm.Ranking + "</td><td>"
+                    + elm.Team + "</td><td>"
+                    + elm.Name + "</td><td>"
+                    + elm.Score + "</td><td>"
+                    + elm.GameNumber + "</td>");
+                document.write("</tr>")
+            }
+            $table.appendChild($tr);
+            document.getElementById("cal3").appendChild($table);
+        }
+
     </script>
 </body>
 
