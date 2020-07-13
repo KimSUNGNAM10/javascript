@@ -1,0 +1,9 @@
+diff a/javascript/soccer.html b/javascript/soccer.html	(rejected hunks)
+@@ -6,7 +6,6 @@
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>개인순위</title>
+ 
+-    <h2>리그별 개인순위</h2>
+     <h2>%리그별 개인순위%</h2>
+ </head>
+ 
