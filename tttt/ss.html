@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <TITLE>선택 입력 양식 만들기 예제</TITLE>
+</head>
+
+<body>
+    <FORM>
+        <P>가장 좋아하는 색상은 어떤 것입니까?</P>
+        <SELECT name="color" size="4" multiple>
+            <!-- 여러개 선택가능-->>
+            <OPTION value="red">빨간색</OPTION>
+            <OPTION value="blue">파란색</OPTION>
+            <OPTION value="white">흰색</OPTION>
+            <OPTION value="black" selected>검은색</OPTION> <!-- 기본시작-->
+            <OPTION value="gray">회색</OPTION>
+        </SELECT>
+        <P>value 값을 지정하지 않은 경우의 전송/취소 기본 버튼</P>
+        <INPUT type="submit" name="submit">&nbsp;&nbsp;
+        <INPUT type="reset" name="reset">
+        <P>
+            <HR>
+        </P>
+        <P>value 값을 지정한 경우의 전송/취소 기본 버튼</P>
+        <!--value 값을 넣어야 어디든 같은것이 출력-->
+        <INPUT type="submit" name="submit" value="전송">&nbsp;&nbsp;
+        <INPUT type="reset" name="reset" value="취소">
+        <!--form 태그안이면 취소 누르면 위에 선택항목 초기화-->
+
+        <P>이전글/다음글 이동할 경우에는 아래의 버튼을 클릭해 주세요.</P>
+        <INPUT type="button" name="prv" value="이전글">&nbsp;&nbsp;
+        <INPUT type="button" name="next" value="다음글">
+
+        <P>전송할 파일을 선택해 주세요.</P>
+        <INPUT type="file" name="files" size="30">
+
+        <P>자기소개서</P>
+        <TEXTAREA name="content" rows="5" cols="50">
+        간략하게 자기 자신을 소개해 주세요.
+        </TEXTAREA>
+
+
+
+
+
+
+
+        
+    </FORM>
+</body>
+
+</html>
